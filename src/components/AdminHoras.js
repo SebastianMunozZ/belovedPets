@@ -4,7 +4,7 @@ class AdminHoras extends Component {
 
     render() {
         return (
-            <div class="imagen-admin-horas">
+            <div className="imagen-admin-horas">
                 <h1>Administrar horas</h1>
             </div>
         );

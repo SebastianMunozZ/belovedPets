@@ -17,7 +17,7 @@ class Header extends Component {
                     <nav id="menu">
                         <ul>
                             <li>
-                                <a href="#">Iniciar sesión</a>
+                                <a href="/">Iniciar sesión</a>
                             </li>
                             <div>
                                 <img src={usuario} className="userLogo" alt="Logotipo" />
