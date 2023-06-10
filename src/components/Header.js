@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import usuario from "../assets/images/usuario.png"
+import usuario from "../assets/images/usuario.png";
+import { NavLink } from "react-router-dom";
 
 class Header extends Component {
 
@@ -17,7 +18,10 @@ class Header extends Component {
                     <nav id="menu">
                         <ul>
                             <li>
-                                <a href="/">Iniciar sesión</a>
+                                <NavLink to="/login">Iniciar sesión</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/registro">Registrarse</NavLink>
                             </li>
                             <div>
                                 <img src={usuario} className="userLogo" alt="Logotipo" />

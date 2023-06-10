@@ -1,18 +1,26 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Header from './components/Header';
+import Nosotros from './components/Nosotros';
+import Registrarse from "./components/Registrarse";
+import Login from "./components/Login";
 
-import NuestrosVets from './components/NuestrosVets';
 
-class Router extends Component{
+class Router extends Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <BrowserRouter>
                 {/* CONFIGURAR RUTAS Y PÁGINAS */}
+                <Header />
                 <Routes>
-                    <Route path="/nuestros-vets" element={<NuestrosVets/>} />
+                    <Route path="/" element={<Nosotros />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/registro" element={<Registrarse/>} />
 
                 </Routes>
+
 
             </BrowserRouter>
         );
