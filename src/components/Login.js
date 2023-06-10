@@ -24,7 +24,7 @@ function Login() {
             sessionStorage.setItem('logged', true);
             sessionStorage.setItem('isVet', false);
             alert("inicio de sesión exitoso");
-            window.location.href = '/';
+            window.location.href = '/principalCliente';
         } else if (user.contraseña == vet.contraseña && user.correo == vet.correo){
             sessionStorage.setItem('logged', true);
             sessionStorage.setItem('isVet', true);

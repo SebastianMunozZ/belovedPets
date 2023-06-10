@@ -296,6 +296,52 @@ body {
   background-color: #0056b3;
 }
 
+.my-button-mascotas {
+  padding: 30px 60px;
+  background-color: #007bff;
+  color: #fff;
+  border: #000;
+  margin-left: 454px;
+  border-radius: 5px;
+  width: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.agregar {
+  padding: 10px 20px;
+  color: #fff;
+  border: #000;
+  margin-right: 270px;
+  border-radius: 5px;
+  width: 25%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.guardar {
+  padding: 10px 20px;
+  color: #fff;
+  border: #000;
+  margin-right: 0px;
+  margin-top: -45px;
+  border-radius: 5px;
+  width: 25%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-container-mascotas {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.my-button-mascotas:hover {
+  background-color: #0056b3;
+}
+
 #menuloggeado a {
   text-decoration: none;
   transition: 300ms all;

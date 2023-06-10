@@ -13,6 +13,10 @@ import VerPaciente from "./components/VerPaciente";
 import EliminarPaciente from "./components/EliminarPaciente";
 import BusquedaUpdate from "./components/BusquedaUpdate";
 import FormUpdate from "./components/FormUpdate";
+import PrincipalCliente from "./components/PrincipalCliente";
+import MisMascotas from "./components/MisMascotas";
+import FormRegistrarMascota from "./components/FormRegistrarMascota";
+import FormUpdateUser from "./components/FormUpdateUser";
 
 
 class Router extends Component {
@@ -34,6 +38,10 @@ class Router extends Component {
                     <Route path="/eliminarPaciente" element={<EliminarPaciente/>} />
                     <Route path="/busquedaUpdate" element={<BusquedaUpdate />} />
                     <Route path="/formUpdate" element={<FormUpdate />} />
+                    <Route path="/principalCliente" element={<PrincipalCliente />} />
+                    <Route path="/misMascotas" element={<MisMascotas />} />
+                    <Route path="/formRegistrarMascota" element={<FormRegistrarMascota />} />
+                    <Route path="/formUpdateUser" element={<FormUpdateUser />} />
 
 
                 </Routes>
