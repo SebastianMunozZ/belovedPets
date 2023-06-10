@@ -8,22 +8,32 @@ function Login() {
     const [pass, setPass] = useState('');
     const [pass2, setPass2] = useState('');
 
+    let correoUser = sessionStorage.getItem('correo');
+    let contraseñaUser = sessionStorage.getItem('contraseña');
+    let vet = JSON.parse(sessionStorage.getItem('veterinario'));
+
     const recibirFormulario = (e) => {
         e.preventDefault();
 
-        let correoPrueba = "sebastian.munoz.z@gmail.com";
-        let passPrueba = "seba1234";
         const user = {
             correo: correo,
             contraseña: pass
         }
-        if (user.contraseña != passPrueba || user.correo != correoPrueba) {
-            alert("Correo o contraseña incorrectos, intenta de nuevo");
-        } else {
+
+        if (user.contraseña == contraseñaUser && user.correo == correoUser) {
             sessionStorage.setItem('logged', true);
+            sessionStorage.setItem('isVet', false);
             alert("inicio de sesión exitoso");
             window.location.href = '/';
+        } else if (user.contraseña == vet.contraseña && user.correo == vet.correo){
+            sessionStorage.setItem('logged', true);
+            sessionStorage.setItem('isVet', true);
+            alert("Bienvenido Dr.");
+            window.location.href = '/';
+        } else {
+            alert("Correo o contraseña incorrectos, intenta de nuevo");
         }
+
     }
 
     return (

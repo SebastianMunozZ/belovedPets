@@ -1,13 +1,25 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-function Registrarse() {
+function ModUsuario() {
 
     const [users, setUsers] = useState([]);
     const [nombre, setNombre] = useState('');
     const [correo, setCorreo] = useState('');
     const [pass, setPass] = useState('');
     const [pass2, setPass2] = useState('');
+
+    useEffect(() => {
+        let nombreUser = sessionStorage.getItem('nombre');
+        let correoUser = sessionStorage.getItem('correo');
+        let contraseñaUser = sessionStorage.getItem('contraseña');
+
+        if (nombreUser && correoUser && contraseñaUser) {
+            setNombre(nombreUser);
+            setCorreo(correoUser);
+            setPass(contraseñaUser);
+        }
+    }, []);
 
     const recibirFormulario = (e) => {
         e.preventDefault();
@@ -19,21 +31,14 @@ function Registrarse() {
                 correo: correo,
                 contraseña: pass
             }
-
-            const vet = {
-                nombre: "veterinario",
-                correo: "veterinario@gmail.com",
-                contraseña: "veterinario"
-            }
             if (user.nombre.length == 0 || user.correo.length == 0) {
                 alert("Ingresa todos los datos obligatorios (*)");
             } else {
                 setUsers([...users, user]);
-                sessionStorage.setItem('veterinario', JSON.stringify(vet));
                 sessionStorage.setItem('nombre', user.nombre);
                 sessionStorage.setItem('correo', user.correo);
                 sessionStorage.setItem('contraseña', user.contraseña);
-                alert("Usuario creado con éxito, ahora puedes iniciar sesión.");
+                alert("Usuario modificado con éxito.");
                 window.location.href = '/';
                 console.log(user);
             }
@@ -47,22 +52,22 @@ function Registrarse() {
         <div id="formulario">
             <div className="center">
                 <div id="form">
-                    <h1 className="subheader">Registrarse</h1>
+                    <h1 className="subheader">Modificar información</h1>
 
                     <form className="mid-form" onSubmit={recibirFormulario}>
                         <div className="form-group">
                             <label htmlFor="nombre">Nombre (*)</label>
-                            <input type="text" name="nombre" onChange={(event) => setNombre(event.target.value)} />
+                            <input type="text" name="nombre" value={nombre} onChange={(event) => setNombre(event.target.value)} />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="correo">Correo electrónico (*)</label>
-                            <input type="text" name="correo" onChange={(event) => setCorreo(event.target.value)} />
+                            <input type="text" name="correo" value={correo} onChange={(event) => setCorreo(event.target.value)} />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="pass">Contraseña (*)</label>
-                            <input type="text" name="pass" onChange={(event) => setPass(event.target.value)} />
+                            <input type="text" name="pass" value={pass} onChange={(event) => setPass(event.target.value)} />
                         </div>
 
                         <div className="form-group">
@@ -76,7 +81,7 @@ function Registrarse() {
 
                         <div>
                             <NavLink type="" value="Cancelar" className="btn btn-cancel" to="/">Cancelar</NavLink>
-                            <input type="submit" value="Crear usuario" className="btn btn-success" />
+                            <input type="submit" value="Guardar" className="btn btn-success" />
                         </div>
 
 
@@ -88,4 +93,4 @@ function Registrarse() {
 
 }
 
-export default Registrarse;
+export default ModUsuario;

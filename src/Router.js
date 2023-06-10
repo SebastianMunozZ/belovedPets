@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Nosotros from './components/Nosotros';
 import Registrarse from "./components/Registrarse";
 import Login from "./components/Login";
+import ModUsuario from "./components/ModUsuario";
 
 
 class Router extends Component {
@@ -18,6 +19,7 @@ class Router extends Component {
                     <Route path="/" element={<Nosotros />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/registro" element={<Registrarse/>} />
+                    <Route path="/modUsuario" element={<ModUsuario/>} />
 
                 </Routes>
 
