@@ -29,7 +29,7 @@ function Login() {
             sessionStorage.setItem('logged', true);
             sessionStorage.setItem('isVet', true);
             alert("Bienvenido Dr.");
-            window.location.href = '/';
+            window.location.href = '/principalVet';
         } else {
             alert("Correo o contraseña incorrectos, intenta de nuevo");
         }
